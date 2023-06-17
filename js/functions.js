@@ -13,7 +13,6 @@
 */
 
 
-
 function checkLength(str = '', limit = 0) {
   if (str.length <= limit) {
     return true;
@@ -35,7 +34,7 @@ function checkLength(str = '', limit = 0) {
 // Это не палиндром
 имяФункции('Кекс');  // false
 */
-
+/*
 function isPalindrome1(str = '') {
   //cast to string
   str = str.toString().toLowerCase().replaceAll(' ', '');
@@ -45,8 +44,8 @@ function isPalindrome1(str = '') {
     return false;
   }
 }
-
-function isPalindrome2(str = '') {
+*/
+function isPalindrome1(str = '') {
   const normalizedStr = str.toString().replaceAll(' ', '').toLowerCase();
   let reversedStr = '';
   for (let i = normalizedStr.length - 1; i >= 0; i--) {
@@ -77,7 +76,7 @@ function isPalindrome2(str = '') {
 // cast to string modified
 
 function strMk1(str = '') {
-  const result = str.toString().split('').filter(char => !isNaN(char) && char !== ' ').join('');
+  const result = str.toString().split('').filter(char => (!isNaN(char) && char !== ' ')).join('');
   return result === '' || isNaN(result) ? NaN : Number(result);
 }
 
