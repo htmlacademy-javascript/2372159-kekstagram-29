@@ -12,6 +12,8 @@
 имяФункции('проверяемая строка', 10); // false
 */
 
+
+
 function checkLength(str = '', limit = 0) {
   if (str.length <= limit) {
     return true;
