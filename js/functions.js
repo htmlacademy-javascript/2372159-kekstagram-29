@@ -36,7 +36,7 @@ function checkLength(str = '', limit = 0) {
 
 function isPalindrome1(str = '') {
   //cast to string
-  str = str.toString().toLowerCase().replace(' ', '');
+  str = str.toString().toLowerCase().replaceAll(' ', '');
   if (str === str.split('').reverse().join('')) {
     return true;
   } else {
@@ -44,15 +44,45 @@ function isPalindrome1(str = '') {
   }
 }
 
+function isPalindrome2(str = '') {
+  const normalizedStr = str.toString().replaceAll(' ', '').toLowerCase();
+  let reversedStr = '';
+  for (let i = normalizedStr.length - 1; i >= 0; i--) {
+    reversedStr += normalizedStr[i];
+  }
+  return normalizedStr === reversedStr;
+}
 
+//console.log(isPalindrome1('Лёша на полке клопа нашёл'));
 
+/*
+Дополнительное задание
 
+Функция принимает строку, извлекает содержащиеся в ней цифры от 0 до 9 и возвращает их в виде целого положительного числа. Если в строке нет ни одной цифры, функция должна вернуть NaN:
 
+имяФункции('2023 год');            // 2023
+имяФункции('ECMAScript 2022');     // 2022
+имяФункции('1 кефир, 0.5 батона'); // 105
+имяФункции('агент 007');           // 7
+имяФункции('а я томат');           // NaN
+Если хотите усложнить задание, предусмотрите случай, когда вместо строки приходит число. Обратите внимание, что возвращать функция по-прежнему должна только целые положительные числа:
 
+имяФункции(2023); // 2023
+имяФункции(-1);   // 1
+имяФункции(1.5);  // 15
+*/
 
-//console.log(isPalindrome1('топот'));
+// cast to string modified
 
+function strMk1(str = '') {
+  const result = str.toString().split('').filter(char => !isNaN(char) && char !== ' ').join('');
+  return result === '' || isNaN(result) ? NaN : Number(result);
+}
+
+//console.log(strMk1('а я томат'));
+//console.log(!isNaN(' '));
 
 //module.exports = { checkLength };
 //module.exports = module.exports = { isPalindrome1 };
-module.exports = { checkLength, isPalindrome1 };
+module.exports = { checkLength, isPalindrome1, strMk1 };
+
