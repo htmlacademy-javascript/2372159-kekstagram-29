@@ -21,4 +21,38 @@ function checkLength(str = '', limit = 0) {
 }
 
 //console.log(checkLength('Alles wird gut sein', 18));
-module.exports = module.exports = { checkLength };
+
+
+/*
+Функция для проверки, является ли строка палиндромом. Палиндром — это слово или фраза, которые одинаково читаются и слева направо и справа налево. Например:
+
+// Строка является палиндромом
+имяФункции('топот'); // true
+// Несмотря на разный регистр, тоже палиндром
+имяФункции('ДовОд'); // true
+// Это не палиндром
+имяФункции('Кекс');  // false
+*/
+
+function isPalindrome1(str = '') {
+  //cast to string
+  str = str.toString().toLowerCase().replace(' ', '');
+  if (str === str.split('').reverse().join('')) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+
+
+
+
+
+
+//console.log(isPalindrome1('топот'));
+
+
+//module.exports = { checkLength };
+//module.exports = module.exports = { isPalindrome1 };
+module.exports = { checkLength, isPalindrome1 };
