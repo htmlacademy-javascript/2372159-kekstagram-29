@@ -85,5 +85,5 @@ function strMk1(str = '') {
 
 //module.exports = { checkLength };
 //module.exports = module.exports = { isPalindrome1 };
-module.exports = { checkLength, isPalindrome1, strMk1 };
+module.exports = { checkLength, isPalindrome1, strMk1 }; //npm test
 
