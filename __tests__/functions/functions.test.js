@@ -1,5 +1,7 @@
-// const { checkLength, isPalindrome1, strMk1 } = require('../../js/functions');
-// import { checkLength, isPalindrome1, strMk1 } from './your-module.js';
+//const { checkLength, isPalindrome1, strMk1, test10 } = require('../../js/functions');
+//import { checkLength, isPalindrome1, strMk1, test10 } from '../../js/functions.js';
+//console.log(test10);
+
 
 function checkLength(str = '', limit = 0) {
   if (str.length <= limit) {
@@ -23,7 +25,6 @@ function strMk1(str = '') {
   const result = str.toString().split('').filter(char => (!isNaN(char) && char !== ' ')).join('');
   return result === '' || isNaN(result) ? NaN : Number(result);
 }
-
 
 describe('module3', () => {
 

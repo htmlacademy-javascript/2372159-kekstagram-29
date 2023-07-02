@@ -20,4 +20,6 @@ export const nameTemplates = [
   'Алёна',
 ];
 
+// console.log(photoId);
+
 

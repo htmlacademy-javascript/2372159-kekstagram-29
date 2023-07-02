@@ -89,13 +89,17 @@ function strMk1(str = '') {
 //module.exports = module.exports = { isPalindrome1 };
 //module.exports = { checkLength, isPalindrome1, strMk1 }; //npm test
 
-describe.only('myFunction', () => {
-  it('returns true if Cтрока короче 20 символов', () => {
-    expect(checkLength('Wir schaffen das', 20)).toBe(true);
-  });
 
-  it('returns true if Длина строки ровно 18 символов', () => {
-    expect(checkLength('Leider nicht heute', 18)).toBe(true);
-  });
+//*
 
-});
+// node --experimental-vm-modules node_modules/.bin/jest
+
+const test10 = 111;
+
+export { checkLength, isPalindrome1, strMk1, test10 }; // es module
+//console.log(test10);
+//*
+
+/*export { checkLength, isPalindrome1, strMk1 }; // es module // npx jest --testNamePattern="module3"
+module.exports = { checkLength, isPalindrome1, strMk1 }; // common js module
+*/
