@@ -2,6 +2,14 @@
 //import { checkLength, isPalindrome1, strMk1, test10 } from '../../js/functions.js';
 //console.log(test10);
 
+/*
+describe('MyFunction', () => {
+  it('should return the sum of two numbers', () => {
+    expect(MyFunction(2, 3)).toEqual(5);
+  });
+});
+npx mocha tests/functions.tests.mjs
+*/
 
 function checkLength(str = '', limit = 0) {
   if (str.length <= limit) {

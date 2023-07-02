@@ -78,7 +78,7 @@ function isPalindrome1(str = '') {
 // cast to string modified
 
 function strMk1(str = '') {
-  const result = str.toString().split('').filter(char => (!isNaN(char) && char !== ' ')).join('');
+  const result = str.toString().split('').filter((char) => (!isNaN(char) && char !== ' ')).join('');
   return result === '' || isNaN(result) ? NaN : Number(result);
 }
 
