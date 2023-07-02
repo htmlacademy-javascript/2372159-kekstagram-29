@@ -103,5 +103,7 @@ function generateName(){
   return nameTemplates[Math.floor(Math.random() * nameTemplates.length)];
 }
 
+//console.log(generateName());
+
 // конец части 5/5 function generateComments(amount = 5)
 // #####################################################

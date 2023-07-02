@@ -1,3 +1,5 @@
+// запуск тестов данного модуля
+// npx jest --testNamePattern="module3"
 
 //##2.29 Нужно больше функций
 //###Функции для тренировки
@@ -85,5 +87,15 @@ function strMk1(str = '') {
 
 //module.exports = { checkLength };
 //module.exports = module.exports = { isPalindrome1 };
-module.exports = { checkLength, isPalindrome1, strMk1 }; //npm test
+//module.exports = { checkLength, isPalindrome1, strMk1 }; //npm test
 
+describe.only('myFunction', () => {
+  it('returns true if Cтрока короче 20 символов', () => {
+    expect(checkLength('Wir schaffen das', 20)).toBe(true);
+  });
+
+  it('returns true if Длина строки ровно 18 символов', () => {
+    expect(checkLength('Leider nicht heute', 18)).toBe(true);
+  });
+
+});
