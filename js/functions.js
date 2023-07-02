@@ -1,3 +1,5 @@
+// запуск тестов данного модуля
+// npx jest --testNamePattern="module3"
 
 //##2.29 Нужно больше функций
 //###Функции для тренировки
@@ -85,5 +87,19 @@ function strMk1(str = '') {
 
 //module.exports = { checkLength };
 //module.exports = module.exports = { isPalindrome1 };
-module.exports = { checkLength, isPalindrome1, strMk1 };
+//module.exports = { checkLength, isPalindrome1, strMk1 }; //npm test
 
+
+//*
+
+// node --experimental-vm-modules node_modules/.bin/jest
+
+const test10 = 111;
+
+export { checkLength, isPalindrome1, strMk1, test10 }; // es module
+//console.log(test10);
+//*
+
+/*export { checkLength, isPalindrome1, strMk1 }; // es module // npx jest --testNamePattern="module3"
+module.exports = { checkLength, isPalindrome1, strMk1 }; // common js module
+*/

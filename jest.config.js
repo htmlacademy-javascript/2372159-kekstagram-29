@@ -1,4 +1,4 @@
-module.exports = {
-  moduleFileExtensions: ['js', 'jsx'],
-  // другие настройки Jest
-}
+export default {
+  testMatch: ['**/__tests__/functions/*.test.js'],
+  transform: {},
+};
