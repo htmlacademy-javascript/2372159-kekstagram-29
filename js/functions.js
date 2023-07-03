@@ -94,12 +94,60 @@ function strMk1(str = '') {
 
 // node --experimental-vm-modules node_modules/.bin/jest
 
+// ########################################################
+// 5.16 https://up.htmlacademy.ru/javascript/29/tasks/11
+// Функции возвращаются
+
+function function0516 (dDawn, dEnd, mStart, mLasting){
+  const dDawnDate = function0516_1(dDawn);
+  const dEndDate = function0516_1(dEnd);
+  const mStartDate = function0516_1(mStart);
+  const mEndDate = new Date(mStartDate.setMinutes(mStartDate.getMinutes() + mLasting));
+  //console.log(mEndDate.getTime());
+  if (dDawnDate.getTime() > mStartDate.getTime()){
+    return false;
+  }
+  let result = true;
+  if (mEndDate.getTime() > dEndDate.getTime()) {
+    result = false;
+  }
+  return result;
+}
+// console.log(function0516('14:00', '17:30', '08:0', 90));
+
+
+function function0516_1 (str1){
+  const c1 = ':';
+
+  const dDawnArray = str1.split(c1);
+  const hour = dDawnArray[0];
+  const minute = dDawnArray[1];
+
+  let year = 2023;
+  let month = 0; // Январь (отсчет месяцев начинается с 0)
+  let date = 15; // число
+  let hours = hour;
+  let minutes = minute;
+  let seconds = 0;
+  let milliseconds = 0;
+
+  const myDate = new Date();
+  myDate.setFullYear(year);
+  myDate.setMonth(month);
+  myDate.setDate(date);
+  myDate.setHours(hours);
+  myDate.setMinutes(minutes);
+  myDate.setSeconds(seconds);
+  myDate.setMilliseconds(milliseconds);
+  //console.log(myDate.getTime());
+  return myDate;
+}
+
+// console.log(function0516_1('08:00'));
+// надо запланировать изучение написания тест кейсов
+// npx mocha tests/5_16_tests.mjs
+// ########################################################
+
 const test10 = 111;
-
-export { checkLength, isPalindrome1, strMk1, test10 }; // es module
+export { checkLength, isPalindrome1, strMk1, test10, function0516 }; // es module
 //console.log(test10);
-//*
-
-/*export { checkLength, isPalindrome1, strMk1 }; // es module // npx jest --testNamePattern="module3"
-module.exports = { checkLength, isPalindrome1, strMk1 }; // common js module
-*/

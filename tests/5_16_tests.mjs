@@ -1,15 +1,28 @@
 // npx mocha tests/5_16_tests.mjs
 import assert from 'assert';
-import { checkLength, isPalindrome1, strMk1, test10 } from '../js/functions.js';
+import { function0516 } from '../js/functions.js';
 
-console.log(test10);
+//console.log(test10);
 
-describe('checkLength', function() {
-  it('should return true when length is less than or equal to limit', function() {
-    assert.strictEqual(checkLength('Hello', 5), true);
+describe('function0516', function() {
+  it('true, если запланированного рабочего дня хватит', function() {
+    assert.strictEqual(function0516('08:00', '17:30', '14:00', 90), true);
   });
 
-  it('should return false when length is greater than limit', function() {
-    assert.strictEqual(checkLength('Hello', 3), false);
+  it('true, если нет переработки', function() {
+    assert.strictEqual(function0516('8:0', '10:0', '8:0', 120), true);
   });
+
+  it('true, если нет переработки', function() {
+    assert.strictEqual(function0516('08:00', '14:30', '14:00', 90), false);
+  });
+
+  it('true, если нет переработки', function() {
+    assert.strictEqual(function0516('14:00', '17:30', '08:0', 90), false);
+  });
+
+  it('true, если нет переработки', function() {
+    assert.strictEqual(function0516('8:00', '17:30', '08:00', 900), false);
+  });
+
 });
