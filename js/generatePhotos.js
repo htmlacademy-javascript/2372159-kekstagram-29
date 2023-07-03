@@ -1,10 +1,9 @@
-import { photoId } from './data.js';
 import { messageTemplates } from './data.js';
 import { nameTemplates } from './data.js';
 
-/*
-const { checkLength, isPalindrome1, strMk1 } = require('../../js/functions');
-function generatePhotos2(amount = 25) {
+let photoId = 0;
+
+function generatePhotos(amount = 25) {
   const photos = [];
   for (let i = 1; i <= amount; i++) {
     const photo = generatePhoto();
@@ -25,11 +24,10 @@ function generatePhoto() {
 
   return photo;
 }
-*/
 
 // часть 1/5
 function generateId() {
-  prhotoId = photoId + 1;
+  photoId = photoId + 1;
   return photoId;
 }
 //console.log(generateId());
@@ -90,16 +88,16 @@ function generateCommentMessageText(){
   for (let i = 0; i < numberOfMessages; i++){
   //take 2 random items from messageTemplates array
     let numberOfMessageTemplate = Math.floor(Math.random() * messageTemplatesLen);
-    while (usedTemplateNumbers.has(numberOfMessageTemplate)) {
+    while (usedTemplateNumbers.includes(numberOfMessageTemplate)) {
       numberOfMessageTemplate = Math.floor(Math.random() * messageTemplatesLen);
     }
-    usedTemplateNumbers.add(numberOfMessageTemplate);
+    usedTemplateNumbers.push(numberOfMessageTemplate);
     message += messageTemplates[numberOfMessageTemplate];
   }
   return message;
 }
 
-function generateName(){
+function generateAuthorName(){
   return nameTemplates[Math.floor(Math.random() * nameTemplates.length)];
 }
 
@@ -107,3 +105,5 @@ function generateName(){
 
 // конец части 5/5 function generateComments(amount = 5)
 // #####################################################
+
+export { generatePhotos }; // es module
